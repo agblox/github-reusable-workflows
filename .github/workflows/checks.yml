@@ -12,7 +12,7 @@ jobs:
   commitlint:
     uses: agblox/github-reusable-workflows/.github/workflows/commitlint.yml@v0.1.0
     with:
-      workspace_path: ${{ workspace_path }}
+      workspace_path: ${{ github.workspace }}
 
   approve:
     if: ${{ success() }}
