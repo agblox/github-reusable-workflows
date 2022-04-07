@@ -9,10 +9,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: pre-commit/action@v2.0.3
 
-  commitlint:
-    uses: agblox/github-reusable-workflows/.github/workflows/commitlint.yml@v0.1.0
-    with:
-      workspace_path: ${{ env.GITHUB_WORKSPACE }}/node_modules
+#  commitlint:
+#    uses: agblox/github-reusable-workflows/.github/workflows/commitlint.yml@v0.1.0
+#    with:
+#      workspace_path: ${{ github.workspace }}
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo  ${{ github.workspace }}/node_modules
 
   approve:
     if: ${{ success() }}
