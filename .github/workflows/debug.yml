@@ -16,7 +16,9 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v2
-      - if: inputs.flag
+      - name: Flag set
+        if: inputs.flag
         run: echo 'flag value ${{ inputs.flag }}'
-      - if: ! inputs.flag
+      - name: Flag not set
+        if: ! inputs.flag
         run: echo 'flag value ${{ inputs.with-flag }}'
