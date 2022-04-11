@@ -20,5 +20,5 @@ jobs:
         if: inputs.flag
         run: echo 'flag value ${{ inputs.flag }}'
       - name: Flag not set
-        if: ! inputs.flag
-        run: echo 'flag value ${{ inputs.with-flag }}'
+        if: ${{ ! inputs.flag }}
+        run: echo 'flag value ${{ inputs.flag }}'
