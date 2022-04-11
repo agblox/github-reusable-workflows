@@ -3,7 +3,7 @@ name: debug
 on:
   workflow_call:
     inputs:
-      with-flag:
+      flag:
         default: false
         description: Boolean flag
         required: false
@@ -12,9 +12,11 @@ on:
 jobs:
   flag:
     runs-on: ubuntu-latest
+    name: Test boolean flag
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v2
-      - if: inputs.with-flag
-        run: echo 'flag value ${{ inputs.with-flag }}'
-      - if: ! inputs.with-flag
-        run: echo 'flag value ${{ inputs.with-flag }}'
+      - if: inputs.flag
+        run: echo 'flag value ${{ inputs.flag }}'
+#      - if: ! inputs.flag
+#        run: echo 'flag value ${{ inputs.with-flag }}'
