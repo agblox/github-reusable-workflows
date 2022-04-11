@@ -18,16 +18,16 @@ jobs:
     uses: agblox/github-reusable-workflows/.github/workflows/approve.yml@v0.4.1
     secrets:
       token: ${{ secrets.ORG_MACHINE_USER_TOKEN }}
-
-  debug-true:
-    uses: agblox/github-reusable-workflows/.github/workflows/debug.yml@debug
-    with:
-      with-flag: true
-
-  debug-false:
-    uses: agblox/github-reusable-workflows/.github/workflows/debug.yml@debug
-    with:
-      with-flag: false
-
-  debug-default:
-    uses: agblox/github-reusable-workflows/.github/workflows/debug.yml@debug
+#
+#  debug-true:
+#    uses: agblox/github-reusable-workflows/.github/workflows/debug.yml@debug
+#    with:
+#      with-flag: true
+#
+#  debug-false:
+#    uses: agblox/github-reusable-workflows/.github/workflows/debug.yml@debug
+#    with:
+#      with-flag: false
+#
+#  debug-default:
+#    uses: agblox/github-reusable-workflows/.github/workflows/debug.yml@debug
