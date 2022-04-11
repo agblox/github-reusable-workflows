@@ -18,5 +18,5 @@ jobs:
       - uses: actions/checkout@v2
       - if: inputs.flag
         run: echo 'flag value ${{ inputs.flag }}'
-#      - if: ! inputs.flag
-#        run: echo 'flag value ${{ inputs.with-flag }}'
+      - if: ! inputs.flag
+        run: echo 'flag value ${{ inputs.with-flag }}'
