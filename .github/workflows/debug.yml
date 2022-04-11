@@ -1,0 +1,20 @@
+name: debug
+
+on:
+  workflow_call:
+    inputs:
+      with-flag:
+        default: false
+        description: Boolean flag
+        required: false
+        type: boolean
+
+jobs:
+  flag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - if: inputs.with-flag
+        run: echo 'flag value ${{ inputs.with-flag }}'
+      - if: ! inputs.with-flag
+        run: echo 'flag value ${{ inputs.with-flag }}'
