@@ -20,7 +20,7 @@ jobs:
       token: ${{ secrets.ORG_MACHINE_USER_TOKEN }}
 
   debug-true:
-    uses: agblox/github-reusable-workflows/.github/workflows/debug.yml@debug
+    uses: agblox/github-reusable-workflows/.github/workflows/debug.yml@DD-590-fixes
     with:
       with-flag: true
 #
