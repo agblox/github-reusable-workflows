@@ -9,7 +9,7 @@ on:
         required: false
         type: string
       aws-role:
-        description: AWS IAM role to asume
+        description: AWS IAM role to assume
         required: true
         type: string
       ecr-regestry:
