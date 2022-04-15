@@ -1,0 +1,68 @@
+name: publish
+
+on:
+  workflow_call:
+    inputs:
+      aws-region:
+        default: us-east-1
+        description: AWS default region
+        required: false
+        type: string
+      aws-role:
+        description: AWS IAM role to assume
+        required: true
+        type: string
+      asdf:
+        default: false
+        description: Install asdf and plugins if true
+        required: false
+        type: boolean
+      ecr:
+        default: false
+        description: Login to the AWS ECR if true
+        required: false
+        type: boolean
+    secrets:
+      aws-access-key:
+        description: Machine user AWS access key
+        required: true
+      aws-secret-key:
+        description: Machine user AWS access key
+        required: true
+      ssh-key:
+        description: Machine user GitHub SSH key
+        required: false
+
+jobs:
+  publish:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install asdf
+        uses: asdf-vm/actions/setup@v1
+        if: inputs.asdf
+      - name: Install asdf plugins
+        if: inputs.asdf
+        run: make asdf
+      - name: Install machine user SSH key
+        env:
+          SSH_KEY: ${{ secrets.ssh-key }}
+        if: env.SSH_KEY != null
+        uses: webfactory/ssh-agent@v0.5.2
+        with:
+          ssh-private-key: |
+            ${{ secrets.ssh-key }}
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.aws-access-key }}
+          aws-secret-access-key: ${{ secrets.aws-secret-key }}
+          aws-region: ${{ inputs.aws-region }}
+          role-to-assume: ${{ inputs.aws-role }}
+          role-duration-seconds: 900
+      - name: Login to Amazon ECR
+        if: ${{ inputs.ecr == true }}
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Push to the artifactory
+        run: make push-artifacts
