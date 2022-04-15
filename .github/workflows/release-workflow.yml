@@ -15,7 +15,7 @@ on:
         type: string
     secrets:
       token:
-        description: 'Machine user GitHub token'
+        description: Machine user GitHub token
         required: true
       ssh-key:
         description: Machine user GitHub SSH key

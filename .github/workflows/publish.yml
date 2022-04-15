@@ -39,6 +39,9 @@ on:
       ssh-key:
         description: Machine user GitHub SSH key
         required: false
+      token:
+        description: Machine user GitHub token
+        required: false
 
 jobs:
   publish:
@@ -76,4 +79,5 @@ jobs:
           ECR_REGISTRY: ${{ inputs.ecr-regestry }}
           ECR_REPO: ${{ inputs.ecr-repo }}
           S3_BUCKET: ${{ inputs.s3-bucket }}
+          GITHUB_TOKEN: ${{ inputs.token }}
         run: make push-artifacts
