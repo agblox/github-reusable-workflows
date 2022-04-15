@@ -79,5 +79,5 @@ jobs:
           ECR_REGISTRY: ${{ inputs.ecr-regestry }}
           ECR_REPO: ${{ inputs.ecr-repo }}
           S3_BUCKET: ${{ inputs.s3-bucket }}
-          GITHUB_TOKEN: ${{ inputs.token }}
+          GITHUB_TOKEN: ${{ secrets.token }}
         run: make push-artifacts
