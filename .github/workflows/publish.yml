@@ -17,11 +17,18 @@ on:
         description: Install asdf and plugins if true
         required: false
         type: boolean
-      ecr:
-        default: false
-        description: Login to the AWS ECR if true
+      ecr-regestry:
+        description: Docker image registry
         required: false
-        type: boolean
+        type: string
+      ecr-repo:
+        description: Docker image name
+        required: false
+        type: string
+      s3-bucket:
+        description: S3 bucket name
+        required: false
+        type: string
     secrets:
       aws-access-key:
         description: Machine user AWS access key
@@ -65,4 +72,8 @@ jobs:
         if: ${{ inputs.ecr == true }}
         uses: aws-actions/amazon-ecr-login@v1
       - name: Push to the artifactory
+        env:
+          ECR_REGISTRY: ${{ inputs.ecr-regestry }}
+          ECR_REPO: ${{ inputs.ecr-repo }}
+          S3_BUCKET: ${{ inputs.s3-bucket }}
         run: make push-artifacts
