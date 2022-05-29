@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.3 (2022-05-29)
+### Fix
+* Downgrade semantic-release version ([`d53ef82`](https://github.com/agblox/github-reusable-workflows/commit/d53ef829b85a80c114ad7e5fea72b6dcfba8dc82))
+
 ## v1.0.2 (2022-05-29)
 ### Fix
 * Downgrade to previous version ([`df084c5`](https://github.com/agblox/github-reusable-workflows/commit/df084c51c57f68812b7a6e1713b9cac6192efff1))
