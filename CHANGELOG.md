@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.2 (2022-05-29)
+### Fix
+* Downgrade to previous version ([`df084c5`](https://github.com/agblox/github-reusable-workflows/commit/df084c51c57f68812b7a6e1713b9cac6192efff1))
+
 ## v1.0.1 (2022-04-18)
 ### Fix
 * Inputs names and login to ECR condition ([`5aa4cd6`](https://github.com/agblox/github-reusable-workflows/commit/5aa4cd66650ff8027c3ea4d17453c9e7e231717d))
