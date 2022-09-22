@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.5 (2022-09-22)
+### Fix
+* Add legacy peer deps install ([`05bd744`](https://github.com/agblox/github-reusable-workflows/commit/05bd744e4f8151d6b7fb066b3e52cabf0d68b9dd))
+
 ## v1.0.4 (2022-09-22)
 ### Fix
 * Commitlint to use 16.15.1 to fix optional deps ([`519ae9d`](https://github.com/agblox/github-reusable-workflows/commit/519ae9da2f4036ce0a789c1d7b3c9da2bbafe1d3))
