@@ -67,8 +67,13 @@ jobs:
       - name: Run unit tests
         if: inputs.run-unit
         run: make test
-      - name: Add coverage comment to PR
-        if: inputs.run-unit
+      - name: Check existence of coverage file for unit tests
+        id: check_unit_coverage
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "pytest-coverage.txt"
+      - name: Add unit tests coverage comment to PR
+        if: ${{ inputs.run-unit && (steps.check_files.outputs.files_exists == 'true') }}
         uses: coroo/pytest-coverage-commentator@v1.0.2
       - name: Run integration tests
         if: ${{ inputs.run-integration == true}}
