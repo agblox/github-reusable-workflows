@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.6 (2022-10-07)
+### Fix
+* No coverage file created after Python unit tests ([`0d56765`](https://github.com/agblox/github-reusable-workflows/commit/0d56765b44fe951c3c85262b90dc6a2e708a2675))
+
 ## v1.0.5 (2022-09-22)
 ### Fix
 * Add legacy peer deps install ([`05bd744`](https://github.com/agblox/github-reusable-workflows/commit/05bd744e4f8151d6b7fb066b3e52cabf0d68b9dd))
