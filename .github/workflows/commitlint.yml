@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: "16.15.1"
       - run: npm install commitlint-plugin-function-rules --legacy-peer-deps
-      - uses: wagoid/commitlint-github-action@v3
+      - uses: wagoid/commitlint-github-action@v5
         env:
           NODE_PATH: ${{ github.workspace }}/node_modules
