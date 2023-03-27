@@ -37,10 +37,10 @@ jobs:
     name: Run tests
     steps:
       - name: Set up Python ${{ inputs.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4.5.0
         with:
           python-version: ${{ inputs.python-version }}
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.5.0
       - name: Install poetry
         run: pip install poetry
       - name: Configure poetry
@@ -57,7 +57,7 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.ssh-key }}
         if: env.SSH_KEY != null
-        uses: webfactory/ssh-agent@v0.5.2
+        uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: |
             ${{ secrets.ssh-key }}
@@ -69,7 +69,7 @@ jobs:
         run: make test
       - name: Check existence of coverage file for unit tests
         id: check_unit_coverage
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2.0.0
         with:
           files: "pytest-coverage.txt"
       - name: Add unit tests coverage comment to PR
