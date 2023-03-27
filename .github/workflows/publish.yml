@@ -25,6 +25,11 @@ on:
         description: Docker image name
         required: false
         type: string
+      node-version:
+        default: '16.15.1'
+        description: Node runtime version
+        required: false
+        type: string
       s3-bucket:
         description: S3 bucket name
         required: false
@@ -48,6 +53,10 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Node ${{ inputs.python-version }}
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: ${{ inputs.node-version }}
       - uses: actions/checkout@v3.5.0
       - name: Install asdf
         uses: asdf-vm/actions/setup@v2.1.0
