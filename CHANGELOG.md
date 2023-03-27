@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v2.0.1 (2023-03-27)
+### Fix
+* Add `node` setup step where it is needed ([`c6536c8`](https://github.com/agblox/github-reusable-workflows/commit/c6536c8b52988beb3ffaac9b28d33f82bc641e47))
+
 ## v2.0.0 (2023-03-27)
 ### Feature
 * Bump Actions versions to latest, default Pyton to `3.9` ([`de94b2b`](https://github.com/agblox/github-reusable-workflows/commit/de94b2bcd480956053d23859fe0d8e8da0d27d72))
