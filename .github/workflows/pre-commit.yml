@@ -8,6 +8,11 @@ on:
         description: Install asdf and plugins if true
         required: false
         type: boolean
+      node-version:
+        default: '16.15.1'
+        description: Node runtime version
+        required: false
+        type: string
       python-version:
         default: '3.9'
         description: Python runtime version
@@ -24,6 +29,13 @@ jobs:
     name: Check all files with pre-commit
     timeout-minutes: 5
     steps:
+      - name: Set up Node ${{ inputs.python-version }}
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: ${{ inputs.node-version }}
+      - uses: actions/setup-python@v4.5.0
+        with:
+          python-version: ${{ inputs.python-version }}
       - uses: actions/checkout@v3.5.0
       - name: Install asdf
         uses: asdf-vm/actions/setup@v2.1.0
@@ -31,9 +43,6 @@ jobs:
       - name: Install asdf plugins
         if: inputs.asdf
         run: make asdf
-      - uses: actions/setup-python@v4.5.0
-        with:
-          python-version: ${{ inputs.python-version }}
       - name: Install machine user SSH key
         env:
           SSH_KEY: ${{ secrets.ssh-key }}
