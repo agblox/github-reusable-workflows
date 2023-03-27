@@ -5,10 +5,10 @@ on:
 
 jobs:
   pre-commit:
-    uses: agblox/github-reusable-workflows/.github/workflows/pre-commit.yml@v2.0.2
+    uses: agblox/github-reusable-workflows/.github/workflows/pre-commit.yml@v2.0.3
 
   release:
-    uses: agblox/github-reusable-workflows/.github/workflows/release-workflow.yml@v2.0.2
+    uses: agblox/github-reusable-workflows/.github/workflows/release-workflow.yml@v2.0.3
     secrets:
       token: ${{ secrets.ORG_MACHINE_USER_TOKEN }}
 
@@ -17,6 +17,6 @@ jobs:
     name: Post Workflow Status To Slack
     needs:
       - release
-    uses: agblox/github-reusable-workflows/.github/workflows/status-to-slack.yml@v2.0.2
+    uses: agblox/github-reusable-workflows/.github/workflows/status-to-slack.yml@v2.0.3
     secrets:
       slack-webhook: ${{ secrets.GIT_SLACK_WEBHOOK }}
