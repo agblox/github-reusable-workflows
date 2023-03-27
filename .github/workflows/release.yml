@@ -6,8 +6,6 @@ on:
 jobs:
   pre-commit:
     uses: agblox/github-reusable-workflows/.github/workflows/pre-commit.yml@v2.0.2
-    with:
-      python-version: "3.10"
 
   release:
     uses: agblox/github-reusable-workflows/.github/workflows/release-workflow.yml@v2.0.2

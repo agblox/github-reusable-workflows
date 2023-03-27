@@ -15,7 +15,7 @@ jobs:
     name: Check PR commit messages with commitlint
     timeout-minutes: 5
     steps:
-      - name: Set up Node ${{ inputs.python-version }}
+      - name: Set up Node ${{ inputs.node-version }}
         uses: actions/setup-node@v3.6.0
         with:
           node-version: ${{ inputs.node-version }}

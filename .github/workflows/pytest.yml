@@ -9,7 +9,7 @@ on:
         required: false
         type: string
       python-version:
-        default: '3.8'
+        default: '3.9'
         description: Python runtime version
         required: false
         type: string
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Run tests
     steps:
-      - name: Set up Node ${{ inputs.python-version }}
+      - name: Set up Node ${{ inputs.node-version }}
         uses: actions/setup-node@v3.6.0
         with:
           node-version: ${{ inputs.node-version }}
