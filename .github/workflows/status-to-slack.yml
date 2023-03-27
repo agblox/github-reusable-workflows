@@ -16,15 +16,14 @@ on:
 jobs:
   send-workflow-status:
     runs-on: ubuntu-latest
+    name: Post Workflow Status To Slack
+    timeout-minutes: 5
     steps:
+      - uses: Gamesight/slack-workflow-status@master
+        with:
+          repo_token: ${{secrets.GITHUB_TOKEN}}
+          slack_webhook_url: ${{secrets.slack-webhook}}
       - name: Set up Node ${{ inputs.python-version }}
         uses: actions/setup-node@v3.6.0
         with:
           node-version: ${{ inputs.node-version }}
-      - name: Post Workflow Status To Slack
-        timeout-minutes: 5
-        steps:
-          - uses: Gamesight/slack-workflow-status@master
-            with:
-              repo_token: ${{secrets.GITHUB_TOKEN}}
-              slack_webhook_url: ${{secrets.slack-webhook}}
