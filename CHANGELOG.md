@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v2.0.3 (2023-03-27)
+### Fix
+* Defaults and steps names ([`e197d48`](https://github.com/agblox/github-reusable-workflows/commit/e197d48625e657a286fafc6cc722429076407999))
+
 ## v2.0.2 (2023-03-27)
 ### Fix
 * Action config typo ([`ba0c1d2`](https://github.com/agblox/github-reusable-workflows/commit/ba0c1d2367cb653cfb4cb4dd36dcbf203a8992aa))
