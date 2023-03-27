@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v2.0.4 (2023-03-27)
+### Fix
+* Bump `actions/cache` to `3.3.1` ([`9a62957`](https://github.com/agblox/github-reusable-workflows/commit/9a62957f3aac20bb55db85a292347dad6947425d))
+
 ## v2.0.3 (2023-03-27)
 ### Fix
 * Defaults and steps names ([`e197d48`](https://github.com/agblox/github-reusable-workflows/commit/e197d48625e657a286fafc6cc722429076407999))
