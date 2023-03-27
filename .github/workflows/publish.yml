@@ -53,7 +53,7 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Node ${{ inputs.python-version }}
+      - name: Set up Node ${{ inputs.node-version }}
         uses: actions/setup-node@v3.6.0
         with:
           node-version: ${{ inputs.node-version }}
