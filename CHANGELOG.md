@@ -2,6 +2,16 @@
 
 <!--next-version-placeholder-->
 
+## v2.0.0 (2023-03-27)
+### Feature
+* Bump Actions versions to latest, default Pyton to `3.9` ([`de94b2b`](https://github.com/agblox/github-reusable-workflows/commit/de94b2bcd480956053d23859fe0d8e8da0d27d72))
+
+### Fix
+* Set-output deprecation notice ([`e45e5c4`](https://github.com/agblox/github-reusable-workflows/commit/e45e5c4a60d2c11130f60ae2db8019d363a8c427))
+
+### Breaking
+* bump Actions versions to latest, default Pyton to `3.9` ([`de94b2b`](https://github.com/agblox/github-reusable-workflows/commit/de94b2bcd480956053d23859fe0d8e8da0d27d72))
+
 ## v1.0.6 (2022-10-07)
 ### Fix
 * No coverage file created after Python unit tests ([`0d56765`](https://github.com/agblox/github-reusable-workflows/commit/0d56765b44fe951c3c85262b90dc6a2e708a2675))
