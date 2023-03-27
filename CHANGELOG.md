@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v2.0.2 (2023-03-27)
+### Fix
+* Action config typo ([`ba0c1d2`](https://github.com/agblox/github-reusable-workflows/commit/ba0c1d2367cb653cfb4cb4dd36dcbf203a8992aa))
+
 ## v2.0.1 (2023-03-27)
 ### Fix
 * Add `node` setup step where it is needed ([`c6536c8`](https://github.com/agblox/github-reusable-workflows/commit/c6536c8b52988beb3ffaac9b28d33f82bc641e47))
