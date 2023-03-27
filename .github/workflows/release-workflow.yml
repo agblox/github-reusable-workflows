@@ -9,7 +9,7 @@ on:
         required: false
         type: boolean
       python-version:
-        default: '3.8'
+        default: '3.9'
         description: Python runtime version
         required: false
         type: string
@@ -25,24 +25,24 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.5.0
       with:
         fetch-depth: 0
         token: ${{ secrets.token }}
     - name: Install asdf
-      uses: asdf-vm/actions/setup@v1
+      uses: asdf-vm/actions/setup@v2.1.0
       if: inputs.asdf
     - name: Install asdf plugins
       if: inputs.asdf
       run: make asdf
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v4.5.0
       with:
         python-version: ${{ inputs.python-version }}
     - name: Install machine user SSH key
       env:
         SSH_KEY: ${{ secrets.ssh-key }}
       if: env.SSH_KEY != null
-      uses: webfactory/ssh-agent@v0.5.2
+      uses: webfactory/ssh-agent@v0.8.0
       with:
         ssh-private-key: |
           ${{ secrets.ssh-key }}
