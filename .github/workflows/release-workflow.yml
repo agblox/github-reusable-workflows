@@ -59,7 +59,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.token }}
         run: |
-          pip install poetry python-semantic-release==7.28.1
+          pip install poetry python-semantic-release==7.33.3
           git config --global user.name "github-actions"
           git config --global user.email "action@github.com"
           semantic-release publish -v DEBUG -D commit_author="github-actions <action@github.com>"
