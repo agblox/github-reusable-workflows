@@ -8,7 +8,7 @@ jobs:
     uses: agblox/github-reusable-workflows/.github/workflows/pre-commit.yml@v2.0.3
 
   release:
-    uses: agblox/github-reusable-workflows/.github/workflows/release-workflow.yml@vmaster
+    uses: agblox/github-reusable-workflows/.github/workflows/release-workflow.yml@master
     secrets:
       token: ${{ secrets.ORG_MACHINE_USER_TOKEN }}
 
