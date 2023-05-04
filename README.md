@@ -35,7 +35,7 @@ You can use [this][a] playbook for automated tools installation(Ubuntu only).
 
 ## Usage
 
-Run `make` for list all available targets.
+Run `make` for list all of available targets.
 
 ### Setup local environment
 
