@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v2.0.5 (2023-05-04)
+### Fix
+* Init release action ([`bdad38a`](https://github.com/agblox/github-reusable-workflows/commit/bdad38a6197c698b283695a943e3ef29fd992238))
+
 ## v2.0.4 (2023-03-27)
 ### Fix
 * Bump `actions/cache` to `3.3.1` ([`9a62957`](https://github.com/agblox/github-reusable-workflows/commit/9a62957f3aac20bb55db85a292347dad6947425d))
